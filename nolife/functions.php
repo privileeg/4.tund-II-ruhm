@@ -1,6 +1,6 @@
 <?php
 
-	session_start()
+	session_start();
 
 	function signUp ($email, $password){
 	
@@ -20,7 +20,7 @@
 		
 	
 		if($stmt->execute()) {
-			echo "salvestamine ınnestus";			
+			echo "salvestamine √µnnestus";			
 		} else {
 		 	echo "ERROR ".$stmt->error;
 		}
@@ -40,15 +40,15 @@
 		
 		echo $mysqli->error;
 		
-		//asendan k¸sim‰rgi
+		//asendan k√ºsim√§rgi
 		$stmt->bind_param("s", $email);
 		
-		//m‰‰ran v‰‰rtused muutujatesse
+		//m√§√§ran v√§√§rtused muutujatesse
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb, $created);
 		$stmt->execute();
 		
-		//andmed tulid andmebaasist vıi mitte
-		//on tıene kui on v‰hemalt ¸ks vaste
+		//andmed tulid andmebaasist v√µi mitte
+		//on t√µene kui on v√§hemalt √ºks vaste
 		if($stmt->fetch()){
 			//oli sellise meiliga kasutaja
 			//password millega kasutaja tahab sisse logida
@@ -59,7 +59,7 @@
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
 				
-				//m‰‰ran sessiooni muutujad millele saan ligi teistelt lehtedelt
+				//m√§√§ran sessiooni muutujad millele saan ligi teistelt lehtedelt
 				header("Location: data.php");
 			
 			}else{
