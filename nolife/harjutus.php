@@ -61,7 +61,7 @@
 		echo "Salvestan... <br>";
 		
 		echo "email: ".$signupEmail."<br>";
-		echo "password: ".$_POST["signupPassword"]."<br>";
+		
 		
 		$password = hash("sha512", $_POST["signupPassword"]);
 		
@@ -73,7 +73,7 @@
 		signup($signupEmail, $password);
 		
 		
-		/* ÜHENDUS
+		/*ÜHENDUS
 		$database = "if16_andralla";
 		$mysqli = new mysqli($serverHost, $serverUsername, $serverPassword, $database);
 		
